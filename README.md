@@ -26,12 +26,9 @@ This project is a responsive awareness and resource website about Türkiye's ong
 ## Languages Used
 
 <p align="center">
-  <img alt="Top language" src="https://img.shields.io/github/languages/top/KhalidKhalel/International-Website?style=for-the-badge&color=e34c26">
-  <img alt="Language count" src="https://img.shields.io/github/languages/count/KhalidKhalel/International-Website?style=for-the-badge&color=178600">
-</p>
-
-<p align="center">
-  <img alt="Languages breakdown" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KhalidKhalel&repo=International-Website&layout=compact&theme=radical&hide_border=true">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-43.7%25-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img alt="HTML" src="https://img.shields.io/badge/HTML-38.7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img alt="CSS" src="https://img.shields.io/badge/CSS-17.6%25-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 </p>
 
 ---
