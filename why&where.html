@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkey Earthquakes - Real-Time Tracking</title>
+    
+    <!-- external libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="why&where.css">
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-globe-americas"></i> Earthquakes in Turkey
+            </a>
+            
+            <!-- nav links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Why & Where</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Prepare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How to Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero section with animated scroll arrow -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-3 mb-4">Understanding Turkey's Earthquake Reality</h1>
+            <p class="lead mb-4">Exploring why Turkey faces constant seismic challenges and where the highest risks exist across the nation.</p>
+            
+            <div class="github-link-hero mb-5">
+                <a href="https://github.com/KhalidKhalel/INFS-2400-International-Website-Project" target="_blank" class="btn btn-outline-light">
+                    <i class="fab fa-github"></i> View Project on GitHub
+                </a>
+            </div>
+            
+            <a href="#why" class="scroll-down-arrow"><i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <!-- why section - explains the geology stuff -->
+    <section id="why" class="why-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Why Does Turkey Experience So Many Earthquakes?</h2>
+            
+            <!-- three main reasons broken into cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <h3 class="text-center">Tectonic Position</h3>
+                        <p class="text-center">Turkey sits at the meeting point of three major tectonic plates: the Eurasian, African, and Arabian plates. This unique position creates constant geological pressure.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <h3 class="text-center">Major Fault Systems</h3>
+                        <p class="text-center">The North Anatolian Fault (NAF) and East Anatolian Fault (EAF) are two of the most active fault lines in the world, running across Turkey for hundreds of kilometers.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <h3 class="text-center">Historical Pattern</h3>
+                        <p class="text-center">Turkey experiences approximately 500 earthquakes per year on average, with several being strong enough to cause damage and casualties.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- more detailed explanation box -->
+            <div class="detail-box">
+                <h4 class="text-center">The Science Behind It</h4>
+                <p class="text-center">The Arabian Plate is pushing northward into the Eurasian Plate at about 2-3 cm per year. Meanwhile, the African Plate moves in a different direction. Turkey, caught in the middle, experiences tremendous stress along its fault lines.</p>
+                <p class="text-center">The <strong>North Anatolian Fault</strong> is a right-lateral strike-slip fault, similar to California's San Andreas Fault. It has produced devastating earthquakes throughout history, including the 1999 İzmit earthquake (M7.6) and the recent 2023 Kahramanmaraş earthquakes.</p>
+                <p class="text-center">The <strong>East Anatolian Fault</strong> extends for about 580 km and was responsible for one of the two major earthquakes in February 2023, highlighting how both fault systems remain highly active.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- interactive map section -->
+    <section id="where" class="map-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Where Are Earthquakes Happening in Turkey?</h2>
+            
+            <!-- leaflet map gets initialized here by the js -->
+            <div id="earthquake-map"></div>
+        </div>
+    </section>
+
+    <!-- charts and data visualization -->
+    <section id="statistics" class="statistics-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Statistics</h2>
+            
+            <div class="row g-4 mb-4">
+                <!-- magnitude distribution bar chart -->
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h4 class="chart-title text-center">Magnitude Distribution</h4>
+                        <canvas id="magnitude-chart"></canvas>
+                        <div class="text-center mt-3">
+                            <small class="text-muted"><strong>Largest:</strong> <strong id="chart-max-mag" class="text-danger">-</strong></small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- timeline chart with period switcher buttons -->
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h4 class="chart-title text-center">Recent Activity Timeline</h4>
+                        <div class="timeline-controls mb-3">
+                            <button class="btn btn-sm btn-outline-secondary timeline-btn active" data-period="day">Per Day</button>
+                            <button class="btn btn-sm btn-outline-secondary timeline-btn" data-period="month">Per Month</button>
+                            <button class="btn btn-sm btn-outline-secondary timeline-btn" data-period="year">Per Year</button>
+                        </div>
+                        <canvas id="timeline-chart"></canvas>
+                        <div class="text-center mt-3">
+                            <small class="text-muted"><strong id="timeline-avg-label" class="text-success">Average Per Day:</strong> <strong id="timeline-avg" class="text-success">-</strong></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- pie chart showing which regions get hit the most -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="chart-container">
+                        <h4 class="chart-title text-center">Most Affected Regions</h4>
+                        <div class="row">
+                            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+                                <canvas id="region-chart" style="max-height: 350px;"></canvas>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <span style="color: #000000; font-weight: 600;">Total Earthquakes: </span><span id="total-earthquakes" style="color: #39ace7; font-weight: 700;">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- table showing recent earthquake details -->
+    <section id="recent" class="recent-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Recent Significant Earthquakes</h2>
+            
+            <div class="table-responsive">
+                <table class="table table-hover earthquake-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Location</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Magnitude</th>
+                            <th>Depth</th>
+                            <th>Sources</th>
+                        </tr>
+                    </thead>
+                    <!-- js populates this tbody with earthquake data -->
+                    <tbody id="earthquakes-tbody">
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                <div class="loading">Loading earthquake data</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer with all the data sources and credits -->
+    <footer id="sources" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- where the earthquake data comes from -->
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-database"></i> Data Sources</h5>
+                    <ul class="source-list">
+                        <li><a href="https://earthquake.usgs.gov/" target="_blank">United States Geological Survey (USGS) Earthquake API</a> - Real-time earthquake data feed</li>
+                    </ul>
+                </div>
+                
+                <!-- sites that gave me ideas for the design -->
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-lightbulb"></i> Map Inspiration</h5>
+                    <ul class="source-list">
+                        <li><a href="https://earthquaketrack.com/" target="_blank">EarthquakeTrack</a> - Earthquake tracking, historical data, and visualization methodology</li>
+                        <li><a href="https://earthquake.usgs.gov/earthquakes/map/" target="_blank">USGS Interactive Event Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- map imagery providers -->
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-map"></i> Map Tiles</h5>
+                    <ul class="source-list">
+                        <li><a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> - Map data and geographic information</li>
+                        <li><a href="https://carto.com/" target="_blank">CARTO</a> - Grayscale base map tiles</li>
+                        <li><a href="https://www.esri.com/" target="_blank">ArcGIS/ESRI</a> - Satellite imagery base map tiles</li>
+                    </ul>
+                </div>
+
+                <!-- javascript libraries that power everything -->
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-code"></i> Libraries Used</h5>
+                    <ul class="source-list">
+                        <li><a href="https://leafletjs.com/" target="_blank">Leaflet.js</a> - Interactive map library and framework</li>
+                        <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a> - Data visualization and charting library</li>
+                        <li><a href="https://flatpickr.js.org/" target="_blank">Flatpickr</a> - Date picker library for filtering</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Turkey Earthquake Tracker.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- external js libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="why&where.js"></script>
+
+</body>
+</html>
