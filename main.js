@@ -1,3 +1,4 @@
+// Written by Khalid Khalel
 // Global variables - these help me keep track of data across different functions
 let map;
 let allEarthquakeData = [];
