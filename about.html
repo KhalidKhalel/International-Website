@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Turkey Earthquake Tracker</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-globe-americas"></i> Earthquakes in Turkey
+            </a>
+            
+            <!-- Hamburger menu checkbox and icon -->
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            
+            <!-- nav links -->
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#buildings">Buildings & Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#prepare">Prepare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#help">How to Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#sources">Sources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="about-title text-center mb-5">About This Project</h1>
+                    
+                    <div class="about-box">
+                        <p>This website was created for an <strong>INFS 2400 international project</strong> to raise awareness about Turkey's ongoing earthquake challenges. The goal is to make the science and reality of earthquakes easier to understand, especially why Turkey is at such high risk and how those risks affect people, buildings, and communities across the country.</p>
+                        
+                        <p>The site combines <strong>real-time earthquake data</strong> with an interactive map centered on Turkey, along with clear visual charts and a detailed table of recent events. Visitors can explore where earthquakes are happening, how strong they are, and which regions are most affected. Other sections focus on building safety, infrastructure impacts, and practical preparation tips so people can better understand what to do before, during, and after an earthquake.</p>
+                        
+                        <p>This project was built using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>Bootstrap</strong>. It uses live earthquake data from the <a href="https://earthquake.usgs.gov/fdsnws/event/1/" target="_blank" class="usgs-link">USGS (United States Geological Survey) API</a> and turns raw numbers into an interface that is more visual, interactive, and easier to learn from. Overall, the site is meant to be both an <strong>educational tool</strong> and a <strong>reminder</strong> that earthquake awareness and preparation are ongoing needs for Turkey and for anyone living in seismic regions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="sources" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Turkey Earthquake Tracker.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
