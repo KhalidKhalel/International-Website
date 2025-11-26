@@ -3,103 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earthquake Preparation</title>
+    <title>Earthquake Preparation Guide</title>
 
+    <!-- Fonts + Bootstrap + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="prepare.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Boxes */
+        .prep-box {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 25px;
+            border-radius: 10px;
+            color: white;
+            height: 100%;
+            transition: 0.3s ease;
+        }
+
+        .prep-box:hover {
+            transform: translateY(-5px);
+            background-color: #222;
+        }
+
+        .prep-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Navbar fix to match other pages */
+        .navbar {
+            background-color: #000 !important;
+            padding: 15px 0;
+        }
+        .nav-link {
+            color: #ddd !important;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+        }
+
+    </style>
 </head>
-
 <body>
 
-    <header class="main-header sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">Turkey’s Ongoing Challenge</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+        <i class="fas fa-globe-americas"></i> Earthquakes in Turkey
+    </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="why&where.html">Why & Where</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="prepare.html">Prepare</a></li>
-                        <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="infrastructure.html">Infrastructure</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
 
-    <section class="hero-section d-flex align-items-center text-center">
-        <div class="container">
-            <h1 class="hero-title">Earthquake Preparation Guide</h1>
-            <p class="hero-subtitle">Learn how to stay safe before, during, and after an earthquake</p>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
 
-            <div class="scroll-down-arrow">
-                <i class="fa-solid fa-angle-down"></i>
-            </div>
-        </div>
-    </section>
+        <li class="nav-item">
+          <a class="nav-link" href="#whywhere">Why & Where</a>
+        </li>
 
-    <section id="prepare-start" class="container py-5">
+        <li class="nav-item">
+          <a class="nav-link" href="#buildings">Buildings & Safety</a>
+        </li>
 
-        <h2 class="section-title text-center mb-4">How to Prepare</h2>
+        <li class="nav-item">
+          <a class="nav-link active" href="prepare.html">Prepare</a>
+        </li>
 
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="prep-card">
-                    <h4>Before an Earthquake</h4>
-                    <ul>
-                        <li>Secure heavy furniture to walls.</li>
-                        <li>Prepare an emergency kit.</li>
-                        <li>Identify safe spots indoors.</li>
-                        <li>Practice earthquake drills.</li>
-                    </ul>
-                </div>
-            </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#help">How to Help</a>
+        </li>
 
-            <div class="col-md-4">
-                <div class="prep-card">
-                    <h4>During an Earthquake</h4>
-                    <ul>
-                        <li>Drop, cover, and hold on.</li>
-                        <li>Stay away from windows.</li>
-                        <li>Stay indoors until shaking stops.</li>
-                        <li>If outside, move to an open area.</li>
-                    </ul>
-                </div>
-            </div>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <div class="col-md-4">
-                <div class="prep-card">
-                    <h4>After an Earthquake</h4>
-                    <ul>
-                        <li>Check for injuries.</li>
-                        <li>Avoid damaged buildings.</li>
-                        <li>Expect aftershocks.</li>
-                        <li>Follow emergency updates.</li>
-                    </ul>
-                </div>
+<!-- PAGE CONTENT -->
+<div class="container py-5">
+    <h1 class="section-title">Earthquake Preparation Guide</h1>
+    <p class="text-center mb-4" style="font-size: 18px;">
+        Learn how to stay safe before, during, and after an earthquake
+    </p>
+
+    <div class="row g-4 mt-4">
+
+        <!-- BEFORE -->
+        <div class="col-lg-4 col-md-6">
+            <div class="prep-box">
+                <h3>Before an Earthquake</h3>
+                <ul>
+                    <li>Secure heavy furniture to walls.</li>
+                    <li>Prepare an emergency kit.</li>
+                    <li>Identify safe spots indoors.</li>
+                    <li>Practice earthquake drills.</li>
+                </ul>
             </div>
         </div>
 
-    </section>
-
-    <footer class="footer bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">© 2025 Turkey’s Ongoing Challenge Website</p>
+        <!-- DURING -->
+        <div class="col-lg-4 col-md-6">
+            <div class="prep-box">
+                <h3>During an Earthquake</h3>
+                <ul>
+                    <li>Drop, cover, and hold on.</li>
+                    <li>Stay away from windows.</li>
+                    <li>Stay indoors until shaking stops.</li>
+                    <li>If outside, move to an open area.</li>
+                </ul>
+            </div>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="prepare.js"></script>
+        <!-- AFTER -->
+        <div class="col-lg-4 col-md-6">
+            <div class="prep-box">
+                <h3>After an Earthquake</h3>
+                <ul>
+                    <li>Check for injuries.</li>
+                    <li>Avoid damaged buildings.</li>
+                    <li>Expect aftershocks.</li>
+                    <li>Follow emergency updates.</li>
+                </ul>
+            </div>
+        </div>
 
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-4" style="color:#aaa;">
+    © 2025 Turkey Earthquake Project
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
