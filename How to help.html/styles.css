@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* space under navbar */
+.page-padding {
+  padding-top: 100px;
+}
+
+/* card style */
+.info-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  background-color: #2a2a2a;
+}
+
+/* details */
+details {
+  background: #111;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
