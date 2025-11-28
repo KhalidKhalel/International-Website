@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building Safety: Why Turkey’s Buildings Fail</title>
+    <title>Building Safety: Why Turkey's Buildings Fail</title>
 
     <!-- Bootstrap & Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,36 +11,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- external stylesheet -->
-    <link rel="stylesheet" href="buildings.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- navigation bar -->
-    <header>
-        <div class="container nav">
-            <div class="logo">🌍 Earthquakes in Turkey</div>
-            <nav class="navlinks" aria-label="Primary">
-                <a class="pill" href="index.html">Home</a>
-                <a class="pill active" href="buildings.html">Buildings & Safety</a>
-                <a class="pill" href="prepare.html">Prepare</a>
-                <a class="pill" href="HowtoHelp.html">How to Help</a>
-                <a class="pill" href="about.html">About</a>
-                <a class="pill" href="sources.html">Sources</a>
-            </nav>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-globe-americas"></i> Earthquakes in Turkey
+            </a>
+            
+            <!-- Hamburger menu checkbox and icon -->
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            
+            <!-- nav links -->
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="buildings.html">Buildings & Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="prepare.html">Prepare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="HowtoHelp.html">How to Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sources</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
 
         <!-- Hero/Title Section -->
-        <section class="hero-band">
+        <section class="hero-band" style="background-color: #000000; padding: 5rem 2rem; text-align: center;">
             <div class="container">
                 <div class="page-title">
-                    <h1>Building Safety: Why Turkey’s Buildings Failed</h1>
-                    <p>The 2023 earthquakes were powerful, but the weak buildings made them deadly.</p>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Building Safety: Why Turkey's Buildings Failed</h1>
+                    <p style="font-size: 1.1rem; color: #d1d1d1;">The 2023 earthquakes were powerful, but the weak buildings made them deadly.</p>
     
-                    <div class="badge-sdg">
+                    <div class="badge-sdg" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: transparent; border: 2px solid #4a4a4a; border-radius: 20px; color: #f5f5f5;">
                         <i class="fa-solid fa-city me-1"></i>
                         SDG 11 – Sustainable Cities &amp; Communities
                     </div>
@@ -49,7 +71,7 @@
         </section>
 
         <!-- Card 1: Introduction -->
-        <section class="opener-band">
+        <section class="opener-band" style="background-color: #1a1a1a; padding: 3rem 2rem;">
             <div class="container">
                 <article class="info-card">
                     <h2>The Truth Behind Building Collapse</h2>
@@ -66,7 +88,7 @@
         </section>
     
         <!-- Content Cards Hierarchy-->
-        <section class="content-band">
+        <section class="content-band" style="background-color: #000000; padding: 3rem 2rem;">
             <div class="container">
                 <div class="row g-4">
                     <!--Card 2-->
@@ -104,7 +126,7 @@
                         </div>
                     </article>                            
                     </div>
-        <!-- Card 4 (centered) -->
+        <!-- Card 4 -->
                 <div class="row g-4 mt-5">
                     <article class="col-md-8 offset-md-2">
                         <div class="info-card">
@@ -128,21 +150,20 @@
             </div>
         </section>
 
-        <!-- footer band -->
-        <section class="footer-band">
-            <div class="container">
-                <h3 class="footer-title"><i class="fa-solid fa-circle-info me-2"></i>Project Info</h3>
-                <p class="footer-text">
-                    This page is part of our International Project website on Turkey's earthquakes. Each section explores
-                    a different aspect of the country's earthquake risks.
-                </p>
-                <div class="footer-divider"></div>
-                <p class="footer-bottom">© 2025 Turkey Earthquake Project.</p>
-            </div>
-        </section>
-    
     </main>
+
+    <!-- footer -->
+    <footer id="sources" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Turkey Earthquake Tracker.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

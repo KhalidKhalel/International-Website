@@ -10,45 +10,46 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-dark text-light">
+<body>
 
-  <!-- HEADER / NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Earthquake Relief</a>
-
-      <!-- Mobile menu button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Nav links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-globe-americas"></i> Earthquakes in Turkey
+      </a>
+      
+      <!-- Hamburger menu checkbox and icon -->
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      
+      <!-- nav links -->
+      <div class="navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="howtohelp.html">How to Help</a>
+            <a class="nav-link" href="buildings.html">Buildings & Safety</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="prepare.html">Prepare</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="buildings.html">Buildings</a>
+            <a class="nav-link active" href="HowtoHelp.html">How to Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sources</a>
           </li>
         </ul>
       </div>
@@ -56,7 +57,7 @@
   </nav>
 
   <!-- PAGE CONTENT -->
-  <div class="container page-padding">
+  <div class="container" style="padding: 5rem 2rem; min-height: 80vh;">
 
     <h2 class="mb-4 text-center">How You Can Help</h2>
 
@@ -143,12 +144,19 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="text-center py-3 mt-5 bg-black text-light">
-    <p> © 2025 Earthquake Project </p>
+  <!-- footer -->
+  <footer id="sources" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>&copy; 2025 Turkey Earthquake Tracker.</p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

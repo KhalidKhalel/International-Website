@@ -1,8 +1,8 @@
 /* GLOBAL */
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #111;      /* Dark background */
-    color: #eee;                 /* Light text */
+    background-color: #111;      
+    color: #eee;                
     margin: 0;
     padding: 0;
 }
@@ -51,7 +51,6 @@ header {
     border-color: #666;
 }
 
-/* ADD SPACE BELOW NAVBAR */
 main {
     padding-top: 120px;
 }
