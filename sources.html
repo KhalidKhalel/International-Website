@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sources</title>
+
+    <!-- External libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-globe-americas"></i> Earthquakes in Turkey
+            </a>
+            
+            <!-- menu checkbox and icon -->
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            
+            <!-- nav links -->
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buildings.html">Buildings & Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="prepare.html">Prepare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="HowtoHelp.html">How to Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="sources.html">Sources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--  Hero -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-2 mb-3">Sources</h1>
+            <p class="lead text-light-50">
+                Key articles and tools we used to build this website about earthquakes in Turkey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main sources content -->
+    <section class="sources-band py-5">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-8">
+                    <h2 class="h4 mb-3">Data &amp; Sources</h2>
+                    <p class="mb-4">
+                        These sources were used to display earthquake information and support the content on our pages.
+                    </p>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>USGS (United States Geological Survey) Earthquake API</strong><br>
+                            <a href="https://earthquake.usgs.gov/fdsnws/event/1/" target="_blank" rel="noopener">
+                                https://earthquake.usgs.gov/fdsnws/event/1/
+                            </a><br>
+                            <small class="text-light">
+                                Used on the Home page to pull recent earthquake data and display events affecting Turkey.
+                            </small>
+                        </li>
+
+                        <!-- More sources will be added here later -->
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
