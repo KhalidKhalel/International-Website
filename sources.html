@@ -52,14 +52,10 @@
         </div>
     </nav>
 
-    <!--  Hero -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <h1 class="display-2 mb-3">Sources</h1>
-            <p class="lead text-light-50">
-                Key articles and tools we used to build this website about earthquakes in Turkey.
-            </p>
-        </div>
+    <!--  Title Hero -->
+    <section class="hero-band" style="background-color: #000000; padding: 4.5rem 2.5rem; text-align: center;">
+        <h1 class="display-5">Sources & References</h1>
+        <p class="lead text-light-50">These sources were used to display earthquake information and support the content on our pages.</p>
     </section>
 
     <!-- Main sources content -->
@@ -67,11 +63,9 @@
         <div class="container">
             <div class="row">
                 <article class="col-lg-8">
-                    <h2 class="h4 mb-3">Data &amp; Sources</h2>
-                    <p class="mb-4">
-                        These sources were used to display earthquake information and support the content on our pages.
-                    </p>
-
+                    <h2 class="h4 mb-3">Sources & References</h2>
+                    
+                    <h3 class="h5 mt-5">Earthquake Data &amp; API</h3>
                     <ul class="list-unstyled">
                         <li class="mb-3">
                             <strong>USGS (United States Geological Survey) Earthquake API</strong><br>
@@ -79,16 +73,87 @@
                                 https://earthquake.usgs.gov/fdsnws/event/1/
                             </a><br>
                             <small class="text-light">
-                                Used on the Home page to pull recent earthquake data and display events affecting Turkey.
+                                Used on the Home page to gather recent earthquake data and display events affecting Turkey.
+                            </small>
+                        </li>
+                    </ul>
+
+                    <h3 class="h5 mt-5">Buildings &amp; Safety</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>University of Cambridge - Turkey-Syria earthquakes: deficiencies in building structures and construction shortcuts were main cause of casualties</strong><br>
+                            <a href="https://www.cam.ac.uk/research/news/new-report-into-turkey-syria-earthquakes-uncovers-deficiencies-in-building-structures-and" target="_blank" rel="noopener">
+                                https://www.cam.ac.uk/research/news/new-report-into-turkey-syria-earthquakes-uncovers-deficiencies-in-building-structures-and
+                            </a><br>
+                            <small class="text-light">
+                                Used on the Buildings & Safety page to show how negligent construction and building weaknesses were major contributors to the 2023 earthquake building collapses.
+                            </small>
+                        </li>
+                        
+                        <li class="mb-3">
+                            <strong>WBDG - Seismic Design Principles</strong><br>
+                            <a href="https://www.wbdg.org/resources/seismic-design-principles" target="_blank" rel="noopener">
+                                https://www.wbdg.org/resources/seismic-design-principles
+                            </a><br>
+                            <small class="text-light">
+                                Used to explain best practices for making structures more earthquake-safe.
+                            </small>
+                        </li>
+                    </ul>
+
+                    <h3 class="h5 mt-5">Earthquake Preparedness &amp; Safety</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>Ready.gov – Earthquakes</strong><br>
+                            <a href="https://www.ready.gov/earthquakes" target="_blank" rel="noopener">
+                                https://www.ready.gov/earthquakes
+                            </a><br>
+                            <small class="text-light">
+                                Used on the Prepare page to explain what to do before, during, and after an earthquake, and why preparation matters.
+                            </small>
+                        </li>
+                    </ul>
+
+                    <h3 class="h5 mt-5">How to Help &amp; Earthquake Relief</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>GlobalGiving – Turkey Earthquake Relief Fund</strong><br>
+                            <a href="https://www.globalgiving.org/projects/turkey-earthquake-relief-fund/" target="_blank" rel="noopener">
+                                https://www.globalgiving.org/projects/turkey-earthquake-relief-fund/
+                            </a><br>
+                            <small class="text-light">
+                                Used on the How to Help page to highlight trusted donation options and how it aids survivors.
                             </small>
                         </li>
 
-                        <!-- More sources will be added here later -->
-                    </ul>
+                        <li class="mb-3">
+                            <strong>Al Jazeera – Turkey Coverage</strong><br>
+                            <a href="https://www.aljazeera.com/where/turkey/" target="_blank" rel="noopener">
+                                https://www.aljazeera.com/where/turkey/
+                            </a><br>
+                            <small class="text-light">
+                                Used for getting the latest news and current information about earthquakes in Turkey.
+                            </small>
+                        </li>
                 </article>
             </div>
         </div>
     </section>
 
+<!-- footer -->
+<div style="width: 100%; height: 2rem; background: #000; margin-top: 3rem; margin-bottom: 2rem;"></div>
+
+<footer id="sources" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>&copy; 2025 Turkey Earthquake Tracker.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
